@@ -90,7 +90,7 @@ local ThemeManager = {} do
 		groupbox:AddDivider()
 		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
 
-		groupbox:AddButton('Set as default', function()
+		groupbox:AddButton('Поставить по умолчанию', function()
 			self:SaveDefault(Options.ThemeManager_ThemeList.Value)
 			self.Library:Notify(string.format('Set default theme to %q', Options.ThemeManager_ThemeList.Value))
 		end)
@@ -121,7 +121,7 @@ local ThemeManager = {} do
 			Options.ThemeManager_CustomThemeList:SetValue(nil)
 		end)
 
-		groupbox:AddButton('Set as default', function()
+		groupbox:AddButton('Поставить по умолчанию', function()
 			if Options.ThemeManager_CustomThemeList.Value ~= nil and Options.ThemeManager_CustomThemeList.Value ~= '' then
 				self:SaveDefault(Options.ThemeManager_CustomThemeList.Value)
 				self.Library:Notify(string.format('Set default theme to %q', Options.ThemeManager_CustomThemeList.Value))
